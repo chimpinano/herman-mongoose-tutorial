@@ -143,7 +143,7 @@ Nosotros, le estamos diciendo a express "Carga el módulo producto que está en 
 
 Está función no hace más que devolver el texto 'Funciona!'. Detengamos la ejecución de app.js, reiniciemosla y hagamos la consulta:
 
-![Pantallazo](http://cl.ly/image/233i1v1k3T2B1O16001o/Screen%20Shot%202012-06-23%20at%209.38.57%20PM.png)
+![Pantallazo](https://cloud.githubusercontent.com/assets/729830/6128169/c316346c-b111-11e4-8b67-e83e9dcc8e85.png)
 
 ### La aplicación propiamente tal
 
@@ -212,7 +212,7 @@ Queremos mostrar una tabla con la lista de productos que tenemos en nuestra base
 ````
 Lo cual se renderea a
 
-![esta imagen](http://cl.ly/image/3e1e0A021d3R171K0f3v/Screen%20Shot%202012-06-25%20at%2012.51.25%20PM.png):
+![esta imagen](https://cloud.githubusercontent.com/assets/729830/6128170/c5110d82-b111-11e4-8e15-87634ef8642d.png):
 
 Para lograr esto usaremos un template de `jade`, librería que viene incluída en expressJS. Si observamos, en la carpeta `views`tenemos todo lo que necesitamos: Un archivo `layout.jade`, el cual no tocaremos, y un archivo `index.js` el cual editaremos para llegar al `html` descrito arriba. Abramos el archivo `index.js` para incluir el siguiente código de template `jade`:
 
@@ -250,7 +250,7 @@ exports.index = function (req, res, next) {
 
 Para probar nuestro cambios, no olvidemos de detener express (`CTRl+C`) e iniciar la aplicación de nuevo (`$ node app.js`). El resultado al llamar a `http://localhost:3000` debería ser: 
 
-![Pantallazo](http://cl.ly/image/1M2M1W1N2n3X1n080i17/Screen%20Shot%202012-06-25%20at%201.09.26%20PM.png)
+![Pantallazo](https://cloud.githubusercontent.com/assets/729830/6128172/c70c83e6-b111-11e4-93e7-8e2529b25bd9.png)
 
 Sin embargo, estos datos son _dummy_. Liberemos el poder de la base de datos `MongoDB`, recordemos que introdujimos este documento:
 
@@ -316,7 +316,7 @@ var producto_schema = require('../models/producto')
 ````
 Ahora, existe, por supuesto la posibilidad de montar de una manera general la conexión para toda la aplicación. No la tocaremos sin embargo en este tutorial.
 
-Modificamos la función `exports.index`, siempre dentro de `controllers/producto.js`para que recoja los productos:
+Modificamos la función `exports.index`, siempre dentro de `controllers/producto.js` para que recoja los productos:
 
 * controllers/producto.js
 
@@ -362,7 +362,7 @@ table(border='1')
 
 Bien. `CTRL+C`, `$ node app.js`y veamos el resultado:
 
-![Pantallazo](http://cl.ly/image/2F2O0Z0w1z2F2i2p0Z3O/Screen%20Shot%202012-07-01%20at%209.07.17%20PM.png)
+![Pantallazo](https://cloud.githubusercontent.com/assets/729830/6128178/d169c6a0-b111-11e4-9e13-d80307bb81e8.png)
 
 #### Página de Edición de un Producto (GET /producto/:id)
 
@@ -419,7 +419,7 @@ form(method='post')
 
 Obtenemos la siguiente pantalla:
 
-![Pantallazo](http://cl.ly/image/1M3o3r0i3o1a/Screen%20Shot%202012-12-05%20at%206.22.03%20AM.png)
+![Pantallazo](https://cloud.githubusercontent.com/assets/729830/6128180/d16b769e-b111-11e4-900a-652fd4c0bc0f.png)
 
 Sin embargo si presionamos el botón guardar cambios, nada ocurre. Es lo que habilitaremos en el siguiente apartado...
 
@@ -509,7 +509,7 @@ table(border='1')
           a(href="/delete-producto/" + producto._id.toString()) Borrar
 ````
 
-![Pantallazo](http://cl.ly/image/433v3Y1Z1T0b/Screen%20Shot%202012-12-05%20at%207.18.01%20AM.png)
+![Pantallazo](https://cloud.githubusercontent.com/assets/729830/6128179/d16a5c5a-b111-11e4-936c-08cfbffd979a.png)
 
 Y la funcionalidad correspondiente en el controlador:
 
@@ -528,7 +528,7 @@ exports.remove = function (req, res, next) {
     }
 
     if (!producto) {
-      return res.send('Invalid ID. (De algún otro lado la sacaste tú...)')
+      return res.send('Invalid ID. (De dónde la sacaste???!!!...)')
     }
 
     // Tenemos el producto, eliminemoslo
@@ -566,7 +566,7 @@ exports.create = function (req, res, next) {
 
 Eso fue sencillo. Quisieramos agregar un link a esta misma página en la página de inicio:
 
-![Pantallazo](http://cl.ly/image/2T0t2I0A1A2q/Screen%20Shot%202012-12-05%20at%207.22.36%20AM.png)
+![Pantallazo](https://cloud.githubusercontent.com/assets/729830/6128183/d16d0ffe-b111-11e4-8571-dc59e06f6384.png)
 
 * /views/index.jade
 
@@ -575,7 +575,7 @@ p
   a(href='/nuevo-producto') Nuevo Producto
 ````
 
-![Pantallazo](http://cl.ly/image/2u3i0b0y0R34/Screen%20Shot%202012-12-05%20at%207.21.33%20AM.png)
+![Pantallazo](https://cloud.githubusercontent.com/assets/729830/6128182/d16c4858-b111-11e4-9e39-c60554e7a5c9.png)
 
 Y la función de controlador `exports.create` debe ser modificada, crearemos un desvío según el metodo HTTP que ocupemos (GET o POST)
 
@@ -624,7 +624,7 @@ exports.create = function (req, res, next) {
 
 Podemos hacer algunas pruebas:
 
-![Pantallazo](http://cl.ly/image/0J1B0e0H0I0t/Screen%20Shot%202012-12-05%20at%207.57.02%20AM.png)
-![Pantallazo](http://cl.ly/image/1p231T2c3J0k/Screen%20Shot%202012-12-05%20at%208.11.18%20AM.png)
+![Pantallazo](https://cloud.githubusercontent.com/assets/729830/6128181/d16bca5e-b111-11e4-8cff-e3e585c6ceab.png)
+![Pantallazo](https://cloud.githubusercontent.com/assets/729830/6128184/d188d3ba-b111-11e4-910c-1f0d891b04cb.png)
 
 Y eso sería todo por este tutorial. Insisto, se pueden hacer muchas cosas más, pero el objetivo es introducir al lector en estas tecnologías. Personalmente hubiese hecho algún trabajo para manejar los errores y devolver un error 500, desarrollo de usuarios y sesiones, más javascript de cliente y otros. Para el futuro. Muchas gracias.
